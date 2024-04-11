@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0d6eo4ln2tl4"]
+
+[ext_resource type="Script" path="res://Scenes/Towers/AangT1.gd" id="1_wo14g"]
+[ext_resource type="Texture2D" uid="uid://ccqvkappgts61" path="res://Assets/Towers/bases/air.png" id="2_tov2l"]
+[ext_resource type="Texture2D" uid="uid://uh0t43julffn" path="res://Assets/Towers/aang/aang.png" id="3_a0d1w"]
+
+[node name="aangTower" type="Node2D"]
+script = ExtResource("1_wo14g")
+
+[node name="Base" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_tov2l")
+
+[node name="Tower" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_a0d1w")
+
+[node name="Marker2D" type="Marker2D" parent="Tower"]
+position = Vector2(20, 0)

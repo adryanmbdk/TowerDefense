@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bn834cp38qu18"]
+[gd_scene load_steps=7 format=3 uid="uid://bn834cp38qu18"]
 
 [ext_resource type="PackedScene" uid="uid://bmn0yy0djf18" path="res://Scenes/Maps/map_1.tscn" id="1_1rgxx"]
 [ext_resource type="Script" path="res://Scenes/MainScenes/game_scene.gd" id="1_68hfv"]
 [ext_resource type="Texture2D" uid="uid://tngvjekei8on" path="res://UI/menu/red_squarebutton08.png" id="2_l5fdy"]
 [ext_resource type="Texture2D" uid="uid://uh0t43julffn" path="res://Assets/Towers/aang/aang.png" id="3_2xv64"]
+[ext_resource type="Script" path="res://Scenes/MainScenes/UI.gd" id="3_orsdd"]
 [ext_resource type="Texture2D" uid="uid://bo1376k3bunac" path="res://Assets/Towers/sokka/sokkaW.png" id="4_vy576"]
 
 [node name="GameScene" type="Node2D"]
@@ -12,6 +13,7 @@ script = ExtResource("1_68hfv")
 [node name="Map1" parent="." instance=ExtResource("1_1rgxx")]
 
 [node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("3_orsdd")
 
 [node name="HUD" type="Control" parent="UI"]
 layout_mode = 3
@@ -20,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="BuildBar" type="HBoxContainer" parent="UI/HUD"]
 layout_mode = 1
@@ -36,7 +39,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 20
 
-[node name="Aang" type="TextureButton" parent="UI/HUD/BuildBar"]
+[node name="Aang" type="TextureButton" parent="UI/HUD/BuildBar" groups=["build_buttons"]]
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
@@ -56,7 +59,7 @@ scale = Vector2(1.25, 1.25)
 pivot_offset = Vector2(36, 36)
 texture = ExtResource("3_2xv64")
 
-[node name="Sokka" type="TextureButton" parent="UI/HUD/BuildBar"]
+[node name="Sokka" type="TextureButton" parent="UI/HUD/BuildBar" groups=["build_buttons"]]
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2

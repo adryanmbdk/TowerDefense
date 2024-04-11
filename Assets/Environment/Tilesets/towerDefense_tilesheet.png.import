@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cunptonkcbxwj"
-path="res://.godot/imported/gentle 32x32 v01.png-1ab391b1b535a753a499a160cb0e733d.ctex"
+uid="uid://bhor3tcribbim"
+path="res://.godot/imported/towerDefense_tilesheet.png-03107e375df8abc1774bdcddd2ab696a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Environment/Tilesets/gentle 32x32 v01.png"
-dest_files=["res://.godot/imported/gentle 32x32 v01.png-1ab391b1b535a753a499a160cb0e733d.ctex"]
+source_file="res://Assets/Environment/Tilesets/towerDefense_tilesheet.png"
+dest_files=["res://.godot/imported/towerDefense_tilesheet.png-03107e375df8abc1774bdcddd2ab696a.ctex"]
 
 [params]
 
