@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bn834cp38qu18"]
+[gd_scene load_steps=11 format=3 uid="uid://bn834cp38qu18"]
 
 [ext_resource type="PackedScene" uid="uid://bmn0yy0djf18" path="res://Scenes/Maps/map_1.tscn" id="1_1rgxx"]
 [ext_resource type="Script" path="res://Scenes/MainScenes/game_scene.gd" id="1_68hfv"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://uh0t43julffn" path="res://Assets/Towers/aang/aang.png" id="3_2xv64"]
 [ext_resource type="Script" path="res://Scenes/MainScenes/UI.gd" id="3_orsdd"]
 [ext_resource type="Texture2D" uid="uid://bo1376k3bunac" path="res://Assets/Towers/sokka/sokkaW.png" id="4_vy576"]
+[ext_resource type="Texture2D" uid="uid://c3mxam1hqjyty" path="res://UI/time/play.png" id="7_3pcys"]
+[ext_resource type="Texture2D" uid="uid://di3ecwxgvpqpg" path="res://UI/time/pause.png" id="8_xhykc"]
+[ext_resource type="Texture2D" uid="uid://hyfml7ohgrke" path="res://UI/time/fastForward.png" id="9_qr540"]
+[ext_resource type="Texture2D" uid="uid://cjpv2rbie8mql" path="res://UI/time/fastForwardPressed.png" id="10_rwhbk"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_68hfv")
@@ -78,3 +82,30 @@ rotation = -1.5708
 scale = Vector2(1.25, 1.25)
 pivot_offset = Vector2(36, 36)
 texture = ExtResource("4_vy576")
+
+[node name="GameControls" type="HBoxContainer" parent="UI/HUD"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -154.0
+offset_top = 20.0
+offset_right = -50.0
+offset_bottom = 70.0
+grow_horizontal = 0
+scale = Vector2(1.25, 1.25)
+
+[node name="PausePlay" type="TextureButton" parent="UI/HUD/GameControls"]
+process_mode = 3
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("7_3pcys")
+texture_pressed = ExtResource("8_xhykc")
+
+[node name="FastForward" type="TextureButton" parent="UI/HUD/GameControls"]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("9_qr540")
+texture_pressed = ExtResource("10_rwhbk")
+
+[connection signal="pressed" from="UI/HUD/GameControls/PausePlay" to="UI" method="_on_pause_play_pressed"]
