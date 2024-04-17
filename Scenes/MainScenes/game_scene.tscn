@@ -109,3 +109,5 @@ texture_normal = ExtResource("9_qr540")
 texture_pressed = ExtResource("10_rwhbk")
 
 [connection signal="pressed" from="UI/HUD/GameControls/PausePlay" to="UI" method="_on_pause_play_pressed"]
+[connection signal="pressed" from="UI/HUD/GameControls/FastForward" to="UI" method="_on_fast_forward_pressed"]
+[connection signal="toggled" from="UI/HUD/GameControls/FastForward" to="UI" method="_on_fast_forward_toggled"]

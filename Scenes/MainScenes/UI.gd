@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+var fastForward = false
+
 func set_tower_preview(tower_type, mouse_position):
 	if get_node("TowerPreview"):
 		get_node("TowerPreview").queue_free()
@@ -35,7 +37,25 @@ func update_tower_preview(new_position, color):
 ## Game Control Functions
 ##
 func _on_pause_play_pressed():
-	if get_tree().is_paused():
-		get_tree().paused = false
+	if get_parent().build_mode:
+		get_parent().cancel_build_mode()
+	if Engine.get_time_scale() == 0.0 and fastForward == true:
+		Engine.set_time_scale(2.0)
+	elif Engine.get_time_scale() == 0.0 and fastForward == false:
+		Engine.set_time_scale(1.0)
+	elif Engine.get_time_scale() >= 1.0:
+		Engine.set_time_scale(0.0)
+	
+func _on_fast_forward_pressed():
+	if get_parent().build_mode:
+		get_parent().cancel_build_mode()
+	if Engine.get_time_scale() == 2.0 and fastForward == false:
+		Engine.set_time_scale(1.0)
+	elif Engine.get_time_scale() != 2.0 and fastForward == true:
+		Engine.set_time_scale(2.0)
+		
+func _on_fast_forward_toggled(toggled_on):
+	if toggled_on:
+		fastForward = true
 	else:
-		get_tree().paused = true
+		fastForward = false
